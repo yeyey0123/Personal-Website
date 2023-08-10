@@ -1,0 +1,554 @@
+<!--<?php
+include 'connect.php';
+    if(isset($_POST['submit'])){
+        $name=$_POST['Name'];
+        $email=$_POST['Email'];
+        $message=$_POST['Message'];
+
+        $sql="insert into `contact`(Name,Email,Message)
+        values('$name','$email','$message')";
+        $result=mysqli_query($conn,$sql);
+        if($result){
+            //echo"Data inserted successuflly";
+            header('location:index.php#contact');
+        }else{
+            die(mysqli_error($con));
+        }
+    }
+?>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4a69556b5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="kalat/yey.png" type="image/png">
+
+</head>
+<body>
+
+<div class="container-fluid">
+        <div class="container" id="home">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <a class="navbar-brand"><img src="picture/mangoes.png" alt=""></a>   
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                 <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav justify-content-start">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#background">Background</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+            <div class="profile-row row pt-5 justify-content-center"> 
+                <div class="col col-4">
+                <div class="profile pt-5">
+                    <img src="picture/yey1.jpg" alt="">
+                    <div class="social-icon">   
+                        <a href="https://www.facebook.com/Yeyey0123/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.messenger.com/t/100013973050707"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        <a href="https://www.instagram.com/nescafebrown/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jonel-castillo-519607264/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                </div>  
+
+                <div class="col-5">
+                <div class="about pt-5">
+                <div class="firstname pt-5"><h2>JONEL</h2></div>
+                    <div class="lastname"><h2>CASTILLO</h2></div>
+                    <h3 class="pb-2">WEB-DEVELOPER</h3>
+                    <hr>
+                    <div class="self"><p class="yey-about">About me <br>
+                        My name is Jonel Castillo, and you can also call me Yey. 
+                       I am a Bachelor of Science in Information Technology student 
+                       and I graduated from STI College Fairview. I made this website 
+                       to put all my artwork and designs. Thank you for visiting.</p></div>
+                    <div class="bot">
+                    <button type="button" class="btn btn-outline-light"><a href="Yey - CV.pdf" download="Yey-CV">Download CV</a></button> 
+                    <button type="button" class="btn btn-outline-light mx-1"><a href="#portfolio">Portfolio</a></button>
+                    </div>
+                </div>
+                </div>
+        </div>  
+</div>
+</div>
+
+<!-- background -->
+
+<div class="skills" id="background">
+
+    <div class="container">
+        <div class="bungad"><h3 class="pt-5">Background</h3></div>
+    </div>
+    <div class="skills-con container d-flex ">
+        <div class="col-md-7 pt-5">
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Designing/Developing Website</li>
+                            <li><span>Game Development </span><br>Creating Game(UNITY)</li>
+                            <li><span>Multimedia</span><br>Layouting/Creating Design, Digital Art</li>
+                            <li><span>Technical</span><br>Set up Computer, Trouble Shooting, Network Cabling</li>
+                            <li><span>MSOffice </span><br>Word, Powerpoint, Excel</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Philippine Coconut Intership (March 1, 2023 - May 26, 2023)</span><br>Information Management Service Unit - IT Staff</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>STI - College Fairview (College)</span><br>Bachelor of Science in Information Technology</li>
+                            <li><span>STI - College Fairview (Senior High School)</span><br>Information and Communication Technologies</li>
+                            <li><span>Kasiglahan Village National High School</span><br>High School</li>
+                            <li><span>Kasiglahan Village Elementary School</span><br>Elementary School</li>
+                        </ul>
+                    </div>
+        </div>
+        
+            <div class="col-md-6 pt-5"> 
+                 <div class="language">
+                    <h3>Language & Software</h3>
+                    <div class="row-holder">
+                        <div class="row pt-3">
+                        <div class="pic col-sm-2"><img src="picture/html.png"></div>
+                        <div class="pic col-sm-2"><img src="picture/css.png"></div>
+                        <div class="pic col-sm-2"><img src="picture/javascrip.png"></div>
+                    </div>
+                        <div class="row">
+                        <div class="boots col-sm-2"><img src="picture/bootstrap.png"></div>
+                        <div class="php col-sm-2"><img src="picture/php.png"></div>
+                        <div class="php col-sm-2"><img src="picture/sql.png"></div>
+                    </div>
+                        <div class="row">
+                        <div class="pic col-sm-2"><img src="picture/unity.png"></div>
+                        <div class="pic col-sm-2"><img src="picture/vscode.png"></div>
+                        <div class="pic col-sm-2"><img src="picture/ase.png"></div>
+                    </div>
+                    </div>
+                 </div>
+            </div>
+    </div>
+</div>
+
+<div class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="bungad"><h3 class="pt-5">Portfolio</h3></div>
+                    <div class="tab-titles2 d-flex justify-content-center">
+                        <p class="tab-links2 active-link" onclick="opentabs('gallery')">Art Gallery</p>
+                        <p class="tab-links2" onclick="opentabs('graphics')">Graphics</p>
+                    </div>
+
+                    
+                    <div class="tab-contents2 active-tab" id="gallery">
+                            <div class="about-art py-4">
+                            <h3 class="pt-1">ART GALLERY - HTML,CSS,BOOTSTRAP & PHP</h3>
+                            </div>
+
+                            <div id="gallery1" class="gallery-container">
+                                    <div class="image-container">
+                                     <img src="artwork/login.png" alt="Image 1">
+                                     <img src="artwork/create.png" alt="Image 1">
+                                     <img src="artwork/profile1.png" alt="Image 1">
+                                     <img src="artwork/profile2.png" alt="Image 1">
+                                     <img src="artwork/profile3.png" alt="Image 1">
+                                     <img src="artwork/profile4.png" alt="Image 1">
+    
+                                        <div class="button-container py-2">
+                                          <button onclick="showGallery(1)">1</button>
+                                          <button onclick="showGallery(2)">2</button>
+                                          <button onclick="showGallery(3)">3</button>
+                                          <button onclick="showGallery(4)">4</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                                <!-- Second Image Gallery -->
+                            <div id="gallery2" class="gallery-container hidden">
+                                <div class="image-container">
+                                    <img src="artwork/profile5.png" alt="Image 1">
+                                    <img src="artwork/profile6.png" alt="Image 1">
+                                    <img src="artwork/profile7.png" alt="Image 1">
+                                    <img src="artwork/profile8.png" alt="Image 1">
+                                    <img src="artwork/profile9.png" alt="Image 1">
+                                    <img src="artwork/profile10.png" alt="Image 1">
+
+                                    <div class="button-container py-2">
+                                          <button onclick="showGallery(1)">1</button>
+                                          <button onclick="showGallery(2)">2</button>
+                                          <button onclick="showGallery(3)">3</button>
+                                          <button onclick="showGallery(4)">4</button>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div id="gallery3" class="gallery-container hidden">
+                                <div class="image-container">
+                                    <img src="artwork/list of user.png" alt="Image 1">
+                                    <img src="artwork/add.png" alt="Image 1">
+                                    <img src="artwork/update.png" alt="Image 1">
+                                    <img src="artwork/update1.png" alt="Image 1">
+                                    <img src="artwork/update2.png" alt="Image 1">
+                                    <img src="artwork/update3.png" alt="Image 1">
+                                    
+                                    <div class="button-container py-2">
+                                          <button onclick="showGallery(1)">1</button>
+                                          <button onclick="showGallery(2)">2</button>
+                                          <button onclick="showGallery(3)">3</button>
+                                          <button onclick="showGallery(4)">4</button>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div id="gallery4" class="gallery-container hidden">
+                                <div class="image-container">
+                                    <img src="artwork/delete.png" alt="Image 1">
+                                    <img src="artwork/howl1.png" alt="Image 1">
+                                    <img src="artwork/howl3.png" alt="Image 1">
+                                    <img src="artwork/howl4.png" alt="Image 1">
+                                    <img src="artwork/howl5.png" alt="Image 1">
+                                    <img src="artwork/howl6.png" alt="Image 1">
+                                    
+                                        <div class="button-container py-2">
+                                          <button onclick="showGallery(1)">1</button>
+                                          <button onclick="showGallery(2)">2</button>
+                                          <button onclick="showGallery(3)">3</button>
+                                          <button onclick="showGallery(4)">4</button>
+                                        </div>
+                                </div>
+                            </div>
+    </div>
+
+                            
+                                <div class="tab-contents2" id="graphics">
+                                    <div class="container">
+                                        <div class="col-sm-15 d-flex justify-content-center pt-3" > <!-- Changed column width to 4 to fit 5 images -->
+                                       
+                            <div id="graphic1" class="graphic-container">
+                            <div class="graphic-container pt-3">
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/misachan.png" alt="Image 1">
+                                                </div>
+                                                <div class="content d-flex align-items-center justify-content-center">
+                                                <h3>Misa Amane</h3>
+                                                <h2>Misa Misa is from anime Death note.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/rayquaza.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Rayquaza</h3>
+                                                <h2>Rayquaza is one of the legendary pokemon or weather god.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/howl.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Howl & Sophie</h3>
+                                                <h2>From Ghibli movie - Howl's moving castle.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/bg1.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Yey</h3>
+                                                <h2>Random character and it's me.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="button-graphic py-2">
+                                          <button onclick="showGraphic(1)">1</button>
+                                          <button onclick="showGraphic(2)">2</button>
+                                          <button onclick="showGraphic(3)">3</button>
+                                        </div>
+                            </div>
+                            </div>
+
+                            <div id="graphic2" class="graphic-container hidden">
+                            <div class="graphic-container">
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/denji.jpg" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Denji</h3>
+                                                <h2>From anime Chainsaw man and he is the main character.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/howl3.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Howl</h3>
+                                                <h2>From Ghibli movie - Howl's moving castle.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/mangoes2.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Lucky Mango</h3>
+                                                <h2>MY PRECIOUS!!!.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/masterpiece2.jpg" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Casca</h3>
+                                                <h2>I hope she and guts have good ending. ;-;</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="button-graphic py-2">
+                                          <button onclick="showGraphic(1)">1</button>
+                                          <button onclick="showGraphic(2)">2</button>
+                                          <button onclick="showGraphic(3)">3</button>
+                                        </div>
+                            </div>
+                            </div>
+
+                            
+                            <div id="graphic3" class="graphic-container hidden">
+                            <div class="graphic-container">
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/mangoes.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Lucky MangoII</h3>
+                                                <h2>Did you know this is my logo in my website.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/yow.jpg" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Yey II</h3>
+                                                <h2>Random Character the Second.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                <img src="kalat/Sprite-0002.png" alt="Image 1">
+                                                </div>
+                                                <div class="content">
+                                                <h3>Three lips</h3>
+                                                <h2>She loves tulip.</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="image d-flex justify-content-center">
+                                                </div>
+                                                <div class="content">
+                                                <h3 class="d-flex justify-content-center align-items-center">Soon</h3>
+                
+                                                </div>
+                                            </div>
+
+                                        <div class="button-graphic py-2">
+                                          <button onclick="showGraphic(1)">1</button>
+                                          <button onclick="showGraphic(2)">2</button>
+                                          <button onclick="showGraphic(3)">3</button>
+                                        </div>
+                            </div>
+                            </div>
+
+                                        </div>
+                                    </div>
+                      
+
+                                </div>
+</div>
+</div>
+
+<div class="contact" id="contact">
+        <div class="container">
+            <div class="bungad py-5"><h3>Contact</h3></div>
+            <div class="row">
+                <div class="col-me col-5">
+                    <div class="info1">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h3>Email me</h3>
+                        <h4>jonelcastillo0123@gmail.com</h4>
+
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Contact me</h3>
+                        <h4>09816767235</h4>
+                        </div>
+
+                        <div class="social-icon">   
+                        <a href="https://www.facebook.com/Yeyey0123/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.messenger.com/t/100013973050707"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        <a href="https://www.instagram.com/nescafebrown/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jonel-castillo-519607264/"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                </div>
+
+
+                <div class="about-col col-5">
+
+                <form name="submit-to-google-sheet">
+                    <label class="pb-2">Comment/Suggestion</label>
+  <div class="form-group py-2">
+    <input type="text" class="form-control" name="Name" placeholder="Your name" autocomplete="off">
+  </div>
+  <div class="form-group py-2">
+
+    <input type="email" class="form-control" name="Email" placeholder="Your Email" autocomplete="off">
+  </div>
+
+  <div class="form-group py-2">
+    <textarea class="form-control" name="Message" rows="3" placeholder="Your Message" autocomplete="off"></textarea>
+  </div>
+  <div class="btn5 py-1">
+  <button type="submit">Submit</button></div>
+</form>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="yey">
+    <div class="container">
+        <div class="logo">
+        <img src="kalat/mangoes.png" alt="">
+        <h1>MANGO;</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="clickableDiv" class="clickable-div">
+<i class="fa-solid fa-plus"></i>
+    <div id="circleContainer" class="circle-container">
+      <div class="circle"><a href="#home"><i class="fa-solid fa-house"></i></a></div>
+      <div class="circle"><a href="#background"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="circle"><a href="#portfolio"><i class="fa-solid fa-folder"></i></div>
+      <div class="circle"><a href="#contact"><i class="fa-solid fa-address-book"></i></div>
+    </div>
+  </div>
+
+
+<script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        //portfolio - tamad na mag rename
+
+        var tablinks2 = document.getElementsByClassName("tab-links2");
+        var tabcontents2 = document.getElementsByClassName("tab-contents2");
+
+        function opentabs(tabname1){
+            for(tablink1 of tablinks2){
+                tablink1.classList.remove("active-link");
+            }
+            for(tabcontent1 of tabcontents2){
+                tabcontent1.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname1).classList.add("active-tab");
+        }
+
+        let currentGallery = 1; // Track the current gallery number
+
+function showGallery(galleryNumber) {
+    document.getElementById("gallery" + currentGallery).classList.add("hidden");
+    document.getElementById("gallery" + galleryNumber).classList.remove("hidden");
+    currentGallery = galleryNumber;
+}
+
+
+            let  currentGraphic = 1;
+function showGraphic(graphicNumber) {
+    document.getElementById("graphic" + currentGraphic).classList.add("hidden");
+    document.getElementById("graphic" + graphicNumber).classList.remove("hidden");
+    currentGraphic = graphicNumber;}
+
+
+    const clickableDiv = document.getElementById('clickableDiv');
+const circleContainer = document.getElementById('circleContainer');
+
+clickableDiv.addEventListener('click', () => {
+  if (circleContainer.style.display === 'none' || circleContainer.style.display === '') {
+    circleContainer.style.display = 'flex';
+  } else {
+    circleContainer.style.display = 'none';
+  }
+});
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz7s7LDC75a3GYCbk4oaH-WJTkXNepHUC7jHmS9IgZe2ytmZIxvHSGAK3IimZx1ERNU/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+</body>
+</html>
